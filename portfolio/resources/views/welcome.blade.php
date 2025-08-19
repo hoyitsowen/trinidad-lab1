@@ -18,7 +18,13 @@
       -webkit-text-fill-color: transparent;
     }
     .hero {
-      padding: 120px 0 80px;
+      position: relative;
+      min-height: 100vh; /* instead of fixed height */
+      display: flex;
+      align-items: center; /* vertically center content */
+      padding: 80px 0; /* reduce padding to balance */
+      background: url('images/purpleBg.jpg') no-repeat center/cover;
+      color: #fff;
     }
     .card {
       background: #161616;
@@ -49,10 +55,9 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold text-gradient" href="#">Owen</a>
+        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="navbar-brand" style="width: 60px;">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -69,31 +74,27 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero container">
-    <div class="row align-items-center">
-      <div class="col-md-7">
-        <p class="text-muted">Hello, I am</p>
-        <h1 class="fw-bold">Owen <span class="text-gradient">Dela Cruz</span></h1>
-        <h3 class="fw-light">Passionate Web & UI/UX Designer</h3>
-        <p>With years of experience, I bring ideas to life through web development and creative design.</p>
-        <div class="d-flex gap-3 mt-3">
+ <section id="hero" class="hero text-center text-white">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-7 text-md-start text-center">
+        <p class="mb-2">My name is</p>
+        <h1 class="fw-bold mb-3">Owen <span class="text-gradient">Trinidad</span></h1>
+        <h3 class="fw-light mb-4">Passionate Web & UI/UX Designer</h3>
+        <p class="mb-4">With years of experience, I bring ideas to life through web development and creative design. As a freelancer, I specialize in creating seamless, user-centered interfaces for apps, websites, and digital dashboards. Let's make your vision a reality.</p>
+        <div class="d-flex gap-3 justify-content-md-start justify-content-center">
           <a href="#" class="btn btn-primary">Download CV</a>
           <a href="#contact" class="btn btn-outline-light">Hire Me</a>
         </div>
-        <div class="d-flex gap-5 mt-4">
-          <div><h3 class="text-gradient">02+</h3><small>Years Exp.</small></div>
-          <div><h3 class="text-gradient">40+</h3><small>Projects</small></div>
-          <div><h3 class="text-gradient">18+</h3><small>Clients</small></div>
-        </div>
       </div>
       <div class="col-md-5 text-center">
-        <img src="https://via.placeholder.com/300x300" alt="profile" class="img-fluid rounded-circle border border-4 border-secondary">
+        <img src="images/icon.png" alt="profile" class="img-fluid rounded-circle border border-4 border-secondary">
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Services -->
+
   <section id="services" class="py-5 bg-black">
     <div class="container text-center">
       <h2 class="fw-bold mb-5 text-gradient">My Services</h2>
@@ -106,7 +107,6 @@
     </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects" class="py-5">
     <div class="container">
       <h2 class="fw-bold mb-5 text-center text-gradient">My Work</h2>
@@ -119,7 +119,6 @@
     </div>
   </section>
 
-  <!-- Skills -->
   <section id="skills" class="py-5 bg-black">
     <div class="container text-center">
       <h2 class="fw-bold mb-5 text-gradient">My Skills</h2>
@@ -132,7 +131,6 @@
     </div>
   </section>
 
-  <!-- Education & Experience -->
   <section id="education" class="py-5">
     <div class="container">
       <div class="row g-4">
@@ -156,7 +154,6 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact" class="py-5 bg-black text-center">
     <div class="container">
       <h2 class="fw-bold mb-4 text-gradient">Contact</h2>
@@ -166,7 +163,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="text-center">
     <p>&copy; 2025 Owen Trinidad - All Rights Reserved</p>
   </footer>
