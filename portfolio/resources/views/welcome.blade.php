@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Owen Trinidad - Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -35,6 +37,39 @@
     .card:hover {
       transform: translateY(-5px);
     }
+    .service-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+  background-color: #161616;
+}
+
+/* Gradient border using pseudo-element */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* border thickness */
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7928ca, #ff0080);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude; 
+  z-index: -1;
+}
+
+/* Lift-up + gradient glow on hover */
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.5),
+              0 0 20px #7928ca,
+              0 0 30px #ff0080;
+}
+
     footer {
       background: #111;
       color: #aaa;
@@ -83,8 +118,13 @@
         <h3 class="fw-light mb-4">Passionate Web & UI/UX Designer</h3>
         <p class="mb-4">With years of experience, I bring ideas to life through web development and creative design. As a freelancer, I specialize in creating seamless, user-centered interfaces for apps, websites, and digital dashboards. Let's make your vision a reality.</p>
         <div class="d-flex gap-3 justify-content-md-start justify-content-center">
-          <a href="#" class="btn btn-primary">Download CV</a>
-          <a href="#contact" class="btn btn-outline-light">Hire Me</a>
+          <a href="#" class="btn btn-outline-primary">Download CV</a>
+          <a href="https://www.linkedin.com/in/owen" target="_blank" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width:45px; height:45px;">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="https://github.com/hoyitsowen" target="_blank" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width:45px; height:45px;">
+            <i class="bi bi-github"></i>
+          </a>
         </div>
       </div>
       <div class="col-md-5 text-center">
@@ -96,16 +136,37 @@
 
 
   <section id="services" class="py-5 bg-black">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-5 text-gradient">My Services</h2>
-      <div class="row g-4">
-        <div class="col-md-3"><div class="card p-3"><h5>UI/UX Design</h5><p>Design clean and user-friendly experiences.</p></div></div>
-        <div class="col-md-3"><div class="card p-3"><h5>Web Development</h5><p>Responsive websites using Laravel & Bootstrap.</p></div></div>
-        <div class="col-md-3"><div class="card p-3"><h5>App Design</h5><p>Mobile-first designs for Android/iOS apps.</p></div></div>
-        <div class="col-md-3"><div class="card p-3"><h5>Branding</h5><p>Helping brands build digital identity.</p></div></div>
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5 text-gradient">My Services</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="service-card p-4 h-100 text-light bg-dark shadow-sm text-start">
+          <h5 class="mb-3 text-gradient">01. UI/UX Design</h5>
+          <p class="text-secondary">With a passion for simplicity and a focus on user experience, I design intuitive interfaces that make digital interactions seamless and enjoyable.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-5">
+        <div class="service-card p-4 h-100 text-light bg-dark shadow-sm text-start">
+          <h5 class="mb-3 text-gradient">02. Web Design</h5>
+          <p class="text-secondary">I create visually compelling, user-centered websites that combine functionality with a memorable user experience, ensuring every interaction feels.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-5">
+        <div class="service-card p-4 h-100 text-light bg-dark shadow-sm text-start">
+          <h5 class="mb-3 text-gradient">03. App Design</h5>
+          <p class="text-secondary">I design mobile applications that prioritize user ease and engagement, transforming ideas into intuitive, impactful experiences right at users' fingertips.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-5">
+        <div class="service-card p-4 h-100 text-light bg-dark shadow-sm text-start">
+          <h5 class="mb-3 text-gradient">04. Branding Design</h5>
+          <p class="text-secondary">I craft cohesive brand identities that resonate with audiences, blending creativity and strategy to make lasting impressions across all touchpoints.</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <section id="projects" class="py-5">
     <div class="container">
