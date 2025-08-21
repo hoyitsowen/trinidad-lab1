@@ -46,7 +46,6 @@
   background-color: #161616;
 }
 
-/* Gradient border using pseudo-element */
 .service-card::before {
   content: "";
   position: absolute;
@@ -62,7 +61,6 @@
   z-index: -1;
 }
 
-/* Lift-up + gradient glow on hover */
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.5),
