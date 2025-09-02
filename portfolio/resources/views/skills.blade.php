@@ -22,7 +22,7 @@
       background: #111;
     }
 
-    /* Page Header with gradient */
+    /* Page Header with smooth gradient blend */
     .page-header {
       background: linear-gradient(to bottom, rgba(30, 0, 50, 0.9), rgba(0, 0, 0, 1)),
                   url('{{ asset("images/purpleBg.jpg") }}') no-repeat center/cover;
