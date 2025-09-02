@@ -141,10 +141,10 @@
             <h5 class="text-gradient">Backend Development</h5>
             <div class="skill-label">
               <span>PHP / Laravel / Node.js</span>
-              <span>80%</span>
+              <span>70%</span>
             </div>
             <div class="progress mb-3">
-              <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
+              <div class="progress-bar" role="progressbar" style="width: 70%;"></div>
             </div>
             <p>Building scalable APIs and secure backends with Laravel, Node.js, and MySQL.</p>
           </div>
