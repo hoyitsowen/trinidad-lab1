@@ -30,13 +30,14 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+  <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+  <li class="nav-item"><a class="nav-link" href="{{ route('services') }}">Services</a></li>
+  <li class="nav-item"><a class="nav-link" href="{{ route('projects') }}">Projects</a></li>
+  <li class="nav-item"><a class="nav-link" href="{{ route('skills') }}">Skills</a></li>
+  <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
+  <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+</ul>
+
       </div>
     </div>
   </nav>
