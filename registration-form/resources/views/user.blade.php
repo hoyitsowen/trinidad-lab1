@@ -15,24 +15,13 @@
         Swal.fire({
             icon: 'success',
             title: 'Success',
-            text: '{{ session('success') }}',
+            text: "{{ session('success') }}",
             confirmButtonText: 'OK'
         });
     </script>
 @endif
 
 <div class="container mt-5 mb-5 bg-white w-75 p-4">
-        <!-- @if($errors->any)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif -->
-
-
         <div class="row">
             <div class="col-lg-8 col-md-6 offset-md-2">
                         <h1 class="text-center">Student Registration</h1>
@@ -42,67 +31,68 @@
           
                             <div class="row mb-3">
                                 <div class="col">
-                                    <label for="firstname" class="form-label">First Name</label>
-                                    <input type="text"  class="form-control @error('firstname') is-invalid @enderror " name="firstname" placeholder="First Name" >
-                                    @error('firstname')
+                                    <label for="otFirstname" class="form-label">First Name</label>
+                                    <input type="text" class="form-control @error('otFirstname') is-invalid @enderror" name="otFirstname" placeholder="First Name">
+                                    @error('otFirstname')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror 
                                 </div>
                                 <div class="col">
-                                    <label for="lastname" class="form-label">Last Name</label>
-                                    <input type="text"  class="form-control @error('lastname') is-invalid @enderror " name="lastname" placeholder="Last Name">
-                                    @error('lastname')
+                                    <label for="otLastname" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control @error('otLastname') is-invalid @enderror" name="otLastname" placeholder="Last Name">
+                                    @error('otLastname')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror 
-                                 
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col">
-                                    <label for="studentNumber" class="form-label">Student Number</label>
-                                    <input type="text" class="form-control @error('stud') is-invalid @enderror " name="stud" placeholder="Student Number" >
-                                    @error('stud')
+                                    <label for="otStudentNumber" class="form-label">Student Number</label>
+                                    <input type="text" class="form-control @error('otStudentNumber') is-invalid @enderror" name="otStudentNumber" placeholder="Student Number">
+                                    @error('otStudentNumber')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror 
-                          
                                 </div>
                                 <div class="col">
                                     <label class="form-label">Gender</label>
                                     <div>
-                                        <div class="form-check form-check-inline" required>
-                                            <input class="form-check-input" type="radio" name="gender"value="Female">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input @error('otGender') is-invalid @enderror" type="radio" name="otGender" value="Female">
                                             <label class="form-check-label" for="female">Female</label>
                                         </div>
-                                        <div class="form-check form-check-inline" required>
-                                            <input class="form-check-input" type="radio" name="gender" value="Male">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="otGender" value="Male">
                                             <label class="form-check-label" for="male">Male</label>
                                         </div>
-                                        <div class="form-check form-check-inline" required>
-                                            <input class="form-check-input" type="radio" name="gender" value="others">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="otGender" value="others">
                                             <label class="form-check-label" for="others">Others</label>
                                         </div>
                                     </div>
+                                    @error('otGender')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col">
-                                    <label for="birthday" class="form-label">Birthday</label>
-                                    <input type="date" class="form-control @error('birthdate') is-invalid @enderror " name="birthdate">
-                                    @error('birthdate')
+                                    <label for="otBirthdate" class="form-label">Birthday</label>
+                                    <input type="date" class="form-control @error('otBirthdate') is-invalid @enderror" name="otBirthdate">
+                                    @error('otBirthdate')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror 
                                 </div>
                                 <div class="col">
-                                    <label for="course" class="form-label">Course</label>
-                                    <select class="form-select @error('course') is-invalid @enderror" name="course">
+                                    <label for="otCourse" class="form-label">Course</label>
+                                    <select class="form-select @error('otCourse') is-invalid @enderror" name="otCourse">
                                         <option value="">Select Course</option>
-                                        <option value="BS Information Technology" {{ old('course') == 'BS Information Technology' ? 'selected' : '' }}>BS Information Technology</option>
-                                        <option value="BS Computer Science" {{ old('course') == 'BS Computer Science' ? 'selected' : '' }}>BS Computer Science</option>
-                                        <option value="BS Information Systems" {{ old('course') == 'BS Information Systems' ? 'selected' : '' }}>BS Information Systems</option>
+                                        <option value="BS Information Technology">BS Information Technology</option>
+                                        <option value="BS Computer Science">BS Computer Science</option>
+                                        <option value="BS Information Systems">BS Information Systems</option>
                                     </select>
-                                    @error('course')
+                                    @error('otCourse')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -110,23 +100,24 @@
 
                             <div class="row mb-3">
                                 <div class="col">
-                                    <label for="email" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror " name="email" placeholder="Email Address" >
-                                    @error('email')
+                                    <label for="otEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control @error('otEmail') is-invalid @enderror" name="otEmail" placeholder="Email Address">
+                                    @error('otEmail')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col">
-                                    <label for="contactNumber" class="form-label">Contact Number</label>
-                                    <input type="text" class="form-control @error('contact') is-invalid @enderror " name="contact" placeholder="Contact Number" >
-                                    @error('contact')
+                                    <label for="otContact" class="form-label">Contact Number</label>
+                                    <input type="text" class="form-control @error('otContact') is-invalid @enderror" name="otContact" placeholder="Contact Number">
+                                    @error('otContact')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
+
                             <div class="mb-3">
-                                <label for="additionalInfo" class="form-label">Additional Information</label>
-                                <textarea class="form-control" name="additionalInfo" rows="3 required"></textarea>
+                                <label for="otInfo" class="form-label">Additional Information</label>
+                                <textarea class="form-control" name="otInfo" rows="3"></textarea>
                             </div>
                             <div class="row">
                                 <button type="submit" class="btn btn-primary">Register</button>

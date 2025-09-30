@@ -16,21 +16,21 @@ class UserController extends Controller
     public function register(Request $request)
     {
         $validated = $request->validate([
-            'firstname' => 'required|string|min:5',
-            'lastname' => 'required|string|max:10',
-            'stud' => 'required|numeric',
-            'gender' => 'required',
-            'birthdate' => 'required|date',
-            'course' => 'required|in:BS Information Technology,BS Computer Science,BS Information Systems',
-            'email' => 'required|email|max:255',
-            'contact' => 'required|numeric',
+            'otFirstname' => 'required|string|min:5',
+            'otLastname' => 'required|string|max:10',
+            'otStudentNumber' => 'required|numeric',
+            'otGender' => 'required',
+            'otBirthdate' => 'required|date',
+            'otCourse' => 'required|in:BS Information Technology,BS Computer Science,BS Information Systems',
+            'otEmail' => 'required|email|max:255',
+            'otContact' => 'required|numeric',
         ]);
 
         Client::create([
-            'firstname' => $request->input('firstname'),
-            'lastname' => $request->input('lastname'),
-            'stud_num' => $request->input('stud'),
-            'gender' => $request->input('gender')
+            'firstname' => $request->input('otFirstname'),
+            'lastname' => $request->input('otLastname'),
+            'stud_num' => $request->input('otStudentNumber'),
+            'gender' => $request->input('otGender')
         ]);
 
         return redirect()->back()->with('success', 'Registration successful!');
