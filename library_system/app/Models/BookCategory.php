@@ -11,5 +11,5 @@ class BookCategory extends Model
 
     protected $table = 'book_categories';
     protected $primaryKey = 'category_id';
-    protected $fillable = ['category_name', 'description'];
+    protected $fillable = ['category_name', 'description', 'image'];
 }
